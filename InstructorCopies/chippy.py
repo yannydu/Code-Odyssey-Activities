@@ -6,8 +6,8 @@ def main():
     print("First we need to figure out how many people are coming.")
 
     # Crew 
-    crew_size = int(input("How many people do you want on the ship? "))
-    print("Please list names of the crew:")
+    crew_size = int(input("How many people do you want on the ship? ")) - 1
+    print("Please list names of the crew: ")
     crew = [name]
     for i in range(crew_size):   
         name = input("Name: ")
@@ -15,7 +15,7 @@ def main():
     print("Your crew: ", end=" ")
     for c_name in crew: 
         if c_name == crew[-1]: 
-            print(f"{c_name}")
+            print(f"{c_name}\n")
         else:
             print(f"{c_name}, ", end=" ")
 
@@ -43,14 +43,16 @@ def main():
     for dis_size in distances:
         total_distance += dis_size
     print(f"We will be travelling {total_distance}km.")
-    
+    input("Press enter to get how much fuel we need...")
+    total_fuel = total_distance * 0.5
+    print(f"We need {total_fuel}L of fuel.\n")
+
     # Food
     print("Now we need to know how long we are going to get our food reserves.")
     days = int(input("How many days are you going? "))
     # Crew needs 3 bars per person per day
     bars_needed = 3
     food = bars_needed * crew_size * days
-    print(f"We need to bring {food} nutriyum bars.")
-
+    print(f"We need to bring {food} nutriyum bars.\n")
 
 main()
